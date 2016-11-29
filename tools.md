@@ -1,3 +1,4 @@
+
 #Install Windows Subsystem for Linux (or Bash on Windows)
 1. Open a Powershell window
 ```PowerShell
@@ -12,18 +13,19 @@
 3. Re-start PC
 4. Type 'bash' in a Windows command prompt
 
-Once you have bash installed, run these commands
+Once you have bash installed, run these commands in bash
 
-    $ sudo apt-get update && sudo apt-get upgrade
+    sudo apt-get update && sudo apt-get upgrade
 
 **Developer Mode** https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development
+
 **WSL** https://msdn.microsoft.com/en-us/commandline/wsl/install_guide
 
 If you made a mistake and want a do-over
-```PowerShell
-    PS > lxrun /uninstall /full
-    PS > lxrun /install
-```
+
+    lxrun /uninstall /full
+    lxrun /install
+    
 **FAQ** https://msdn.microsoft.com/en-us/commandline/wsl/faq
 
 ##Install the Azure CLI

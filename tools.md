@@ -1,6 +1,8 @@
 #Install Windows Subsystem for Linux (or Bash on Windows)
 1. Enable Windows Subsystem for Linux in Programs->Features (Windows 10 Anniversary Update build 14393 or later)
-   PS > Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+
+    PS > Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+    
 2. Turn on "Developer Mode" in Settings-> For developers -> Developer Mode
 3. Re-start PC
 4. Run 'bash' on a command prompt

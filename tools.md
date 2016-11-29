@@ -22,10 +22,12 @@ If you made a mistake and want a do-over
 
 #Install the Azure CLI
 *Nodejs is required to run the Azure CLI*
+
     $ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
       sudo apt-get install -y nodejs
      
     $ sudo npm install -g azure-cli
 
 **Reference** https://docs.microsoft.com/en-us/azure/xplat-cli-install?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+
 

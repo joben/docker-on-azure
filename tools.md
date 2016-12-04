@@ -42,3 +42,15 @@ Check this link to check the pre-reqs to run Docker on Windows https://docs.dock
 ```    
 2. Download Docker for Windows https://docs.docker.com/docker-for-windows/
 
+##Optional
+###install powerline fonts
+
+Clone the repo using git or just download the repo to your local computer
+
+https://github.com/powerline/fonts
+
+Run the installation script in powershell
+
+```PowerShell
+    .\install.ps1
+```

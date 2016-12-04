@@ -1,3 +1,5 @@
+#Reworking this one -- not recommended for use :-)
+
 #Create a Docker host on Linux
 This docker host will be a CentOS Linux VM running on Azure
 

@@ -21,5 +21,12 @@ az vm create -g rockthedemo -n windcon \
 --image MicrosoftWindowsServer:WindowsServer:2016-Datacenter-with-Containers:2016.0.20161108 \
 --admin-username joben --admin-password Pass@word123 --public-ip-address-allocation static \
 --public-ip-address-dns-name windcon --size Standard_D3_v2 
+
 ##Show status
 az vm show --name windcon -g rockthedemo
+
+#Create a Linux VM. Install Docker
+
+
+
+

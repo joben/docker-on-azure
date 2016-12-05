@@ -1,0 +1,27 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "dnsNamePrefix": {
+      "value": "tiltokyo"
+    },
+    "agentCount": {
+      "value": 1
+    },
+    "agentVMSize": {
+      "value": "Standard_A2"
+    },
+    "linuxAdminUsername": {
+      "value": "joben"
+    },
+    "orchestratorType": {
+      "value": "DCOS"
+    },
+    "masterCount": {
+      "value": 3
+    },
+    "sshRSAPublicKey": {
+      "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDgVIPMfnip7oLDC44FMDQ+Eme0smim3OE7rGvbzVFe3Xu9qH5jTcxPLwUOlk26ZYgnPcuX9Rvatpbt0cGnEngV3kcZj+IPqVGMggA5/8sBFvF5ZMclnVc9vm4B3wRGECitZcB+LLuE0NFakHsrcaH3BTprseDhN6+DjBP4iQrCdEOIahTQflYnSHFeajMlZ/ESlRJ+Mw4yA/XOlOAoFgZYpan6d5QgIkRKVjYUHUuh5WK/x/jEspdKmSC5CMV/zYTCuR2f/k9t2YUzs0ykmzxXXsDURs/e6i3ewkKTZW4nfTVoJ4Qcg0E0zXhIMC6peOKxjQy4gLnmb39GMwmY2VOtqa8Gvgv4mIMqM5WmSgeYUx6WzlRnrQnXwedYJ789Q5+BhUu6tIFEl0FIwo+r+u5Kgy8YZdVpHnSN751ep8N4WhJfSNRmiacVSLPox/Ik/SCsJndXSqjRL9I3yuYBFzlseyGcu6TUzpE+WpH5+FMpqH7iov3/BN86GBU90PaGQyIc2/i2Mg5f5Ag3CCONErI8BhQcn5xLNPr1/G7C6LMzzk/3DZtPS3VU0B3/4oaLPWAvTsmWLb76EeSSazTSn2Uwy4GBXw51I6LRMo/Mylg0dHSBvvsmfHSvdb7cNY2EOdo304KoLGREo3tlEo2h8j3NNJsKqqui53/HD5e/AluGWw== jrara@microsoft.com"
+    }
+  }
+}

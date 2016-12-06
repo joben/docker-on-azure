@@ -45,3 +45,6 @@ az acs create -d til -n tilimetu -g tiltokyo --admin-username joben --agent-coun
    --ssh-key-value /home/joben/.ssh/id_rsa.pub
 
 az acs list
+
+#Live Debugging on Docker
+https://blog.docker.com/2016/07/live-debugging-docker/

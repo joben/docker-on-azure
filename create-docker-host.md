@@ -121,3 +121,31 @@ az vm disk attach-new -g dockerdev --vm-name mentos \
 --vhd https://projectrepo.blob.core.windows.net/vhds/pyprojects.vhd \
 --disk-size 50 --name pyprojects.vhd  --lun 0
 ```
+4. Login to the VM
+```Shell
+  ssh ops@mentos
+```
+
+5. View disk partitions
+
+```Shell
+dmesg | grep SCSI
+```
+6. Partition the Disk
+```Shell
+  sudo fdisk /dev/sdc
+
+  The device presents a logical sector size that is smaller than
+  the physical sector size. Aligning to a physical sector (or optimal
+  I/O) size boundary is recommended, or performance may be impacted.
+  Welcome to fdisk (util-linux 2.23.2).
+
+  Changes will remain in memory only, until you decide to write them.
+  Be careful before using the write command.
+
+  Command (m for help): q
+```
+
+https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-linux-add-disk?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+
+

@@ -98,4 +98,24 @@ Enter the following in the config file
 References:
  https://docs.docker.com/engine/installation/linux/centos/
  
+##Attach a new disk to the Linux VM. This will store persistent data for the docker containers.
 
+1. Create a new storage account for project related (application level) data
+```Shell
+  az storage account create -g dockerdev -n projectrepo -l southeastasia --type Standard_LRS
+  ##show newly created storage account
+  
+  az storage account show -g dockerdev -n projectrepo
+  az storage account list -g dockerdev -n projectrepo
+```
+2. Set environment variable (for the session) to enable the CLI to query the storage account
+```Shell
+  export AZURE_STORAGE_CONNECTION_STRING=$(az storage account show-connection-string -g dockerdev -n projectrepo)
+```
+
+3. Attach a new disk to the Linux VM
+```Shell
+az vm disk attach-new -g dockerdev --vm-name mentos \
+--vhd https://projectrepo.blob.core.windows.net/vhds/pyprojects.vhd \
+--disk-size 50 --name pyprojects.vhd  --lun 0
+```

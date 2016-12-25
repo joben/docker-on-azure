@@ -56,6 +56,7 @@ Enter the following in the config file
  ```
  2. Add yum repo
  ```Shell
+ 
   sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
   [dockerrepo]
   name=Docker Repository
@@ -65,6 +66,7 @@ Enter the following in the config file
   gpgkey=https://yum.dockerproject.org/gpg
   EOF
   ```
+  
   3. Install the docker engine
   ```Shell
   sudo yum install docker-engine

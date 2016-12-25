@@ -60,7 +60,8 @@ Enter the following in the config file
  ```Shell
   sudo yum update
  ```
- 2. Add yum repo
+
+2. Add yum repo
  ```Shell
  
   sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
@@ -109,6 +110,7 @@ References:
 ##Attach a new disk to the Linux VM. This will store persistent data for the docker containers.
 
 1. Create a new storage account for project related (application level) data
+
 ```Shell
   az storage account create -g dockerdev -n projectrepo -l southeastasia --type Standard_LRS
   ##show newly created storage account
@@ -117,17 +119,20 @@ References:
   az storage account list -g dockerdev -n projectrepo
 ```
 2. Set environment variable (for the session) to enable the CLI to query the storage account
+
 ```Shell
   export AZURE_STORAGE_CONNECTION_STRING=$(az storage account show-connection-string -g dockerdev -n projectrepo)
 ```
 
 3. Attach a new disk to the Linux VM
+
 ```Shell
 az vm disk attach-new -g dockerdev --vm-name mentos \
 --vhd https://projectrepo.blob.core.windows.net/vhds/pyprojects.vhd \
 --disk-size 50 --name pyprojects.vhd  --lun 0
 ```
 4. Login to the VM
+
 ```Shell
   ssh ops@mentos
 ```
@@ -143,6 +148,7 @@ dmesg | grep SCSI
 [ 2599.573569] sd 4:0:0:0: [sdc] Attached SCSI disk
 ```
 6. Partition the Disk
+
 ```Shell
   sudo fdisk /dev/sdc
 
@@ -159,4 +165,15 @@ dmesg | grep SCSI
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-linux-add-disk?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
 
+##Add network endpoints
+
+```Shell
+   az network nsg rule create --resource-group myResourceGroup \
+    --nsg-name myNetworkSecurityGroup --name myNetworkSecurityGroupRule \
+    --protocol tcp --direction inbound --priority 1000 \
+    --source-address-prefix '*' --source-port-range '*' \
+    --destination-address-prefix '*' --destination-port-range 80 --access allow
+```
+
+https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-linux-nsg-quickstart?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
 

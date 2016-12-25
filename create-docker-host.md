@@ -40,12 +40,18 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-linux-q
 Enter the following in the config file
 
 ```Shell
-  Host myVM
+  Host mentos
     HostName mydns.southeastasia.cloudapp.azure.com
     User ops
     Port 22
     IdentityFile ~/.ssh/id_rsa
  ```
+ After setting the config you can now ssh to the VM using
+ 
+ ```Shell
+  ssh ops@mentos
+ ```
+ 
  ##Installing the Docker Engine
  ###Installing with yum
  
@@ -130,6 +136,11 @@ az vm disk attach-new -g dockerdev --vm-name mentos \
 
 ```Shell
 dmesg | grep SCSI
+[    0.254120] SCSI subsystem initialized
+[    0.796197] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 251)
+[    2.235369] sd 5:0:1:0: [sdb] Attached SCSI disk
+[    2.236217] sd 2:0:0:0: [sda] Attached SCSI disk
+[ 2599.573569] sd 4:0:0:0: [sdc] Attached SCSI disk
 ```
 6. Partition the Disk
 ```Shell

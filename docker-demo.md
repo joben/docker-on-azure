@@ -1,3 +1,7 @@
+#Search for docker images
+docker search ubuntu
+docker search -s 1 ubuntu
+
 #Run a docker container
 docker run -it ubuntu:latest bash
 cat /etc/*release
@@ -16,8 +20,15 @@ docker run ubuntu echo "hello. this is ubuntu"
 
 docker ps
 
+docker inspect <friendly name | id >
+
+docker logs <friendly name | id >
+
 docker pull nginx
 docker run -d nginx
+
+#run a container & bind ports
+
 docker run -d -p 80:80 --name nginxweb nginx
 
 docker run -d -p 80:80 --name static-site seqvence/static-site
